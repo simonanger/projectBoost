@@ -1488,15 +1488,40 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 23404517028109956, guid: 6b7f47523ee5345968ad699f41228336,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba420af57956b4db686bb8b7e876d190, type: 2}
     - target: {fileID: 1189777524512104, guid: 6b7f47523ee5345968ad699f41228336, type: 2}
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
     - target: {fileID: 114906520773839340, guid: 6b7f47523ee5345968ad699f41228336,
         type: 2}
-      propertyPath: rcsThrust
-      value: 85
-      objectReference: {fileID: 0}
+      propertyPath: mainEngine
+      value: 
+      objectReference: {fileID: 8300000, guid: 65fb6323bc27e465e905db7d0dd749bb, type: 3}
+    - target: {fileID: 114906520773839340, guid: 6b7f47523ee5345968ad699f41228336,
+        type: 2}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a3a88929c36444bbfaba54c5ded4c7d5, type: 3}
+    - target: {fileID: 114906520773839340, guid: 6b7f47523ee5345968ad699f41228336,
+        type: 2}
+      propertyPath: startFinish
+      value: 
+      objectReference: {fileID: 8300000, guid: 0d8fc97f887114b9c9be2b2be677ac7e, type: 3}
+    - target: {fileID: 114906520773839340, guid: 6b7f47523ee5345968ad699f41228336,
+        type: 2}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 8300000, guid: a3a88929c36444bbfaba54c5ded4c7d5, type: 3}
+    - target: {fileID: 114906520773839340, guid: 6b7f47523ee5345968ad699f41228336,
+        type: 2}
+      propertyPath: success
+      value: 
+      objectReference: {fileID: 8300000, guid: 0d8fc97f887114b9c9be2b2be677ac7e, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b7f47523ee5345968ad699f41228336, type: 2}
   m_IsPrefabParent: 0
