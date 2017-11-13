@@ -12,11 +12,13 @@ public class Rocket : MonoBehaviour
     [SerializeField] AudioClip mainEngine;
     [SerializeField] AudioClip death;
     [SerializeField] AudioClip success;
-    [SerializeField] float levelLoadDelay = 2f;
+    [SerializeField] float levelLoadDelay = 3f;
 
     [SerializeField] ParticleSystem mainEngineParticles;
     [SerializeField] ParticleSystem deathParticles;
     [SerializeField] ParticleSystem successParticles;
+
+    static int levelNumber = 0;
 
     Rigidbody rigidBody;
     AudioSource audio;
@@ -50,9 +52,12 @@ public class Rocket : MonoBehaviour
                 // do nothing
                 break;
             case "Finish":
+                levelNumber++;
+                print(levelNumber);
                 StartSuccessSequence();
                 break;
             default:
+                levelNumber = 0;
                 StartDeathSequence();
                 break;
         }
@@ -65,6 +70,7 @@ public class Rocket : MonoBehaviour
         audio.PlayOneShot(success);
         successParticles.Play();
         Invoke("LoadNextLevel", 1f);
+        //LoadNextLevel();
     }
 
     private void StartDeathSequence()
@@ -74,16 +80,18 @@ public class Rocket : MonoBehaviour
         audio.PlayOneShot(death);
         deathParticles.Play();
         Invoke("LoadFirstLevel", 1f);
+        //LoadFirstLevel();
     }
 
     private void LoadFirstLevel()
     {
         SceneManager.LoadScene(0);
+        print(levelNumber);
     }
 
     private void LoadNextLevel()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(levelNumber);
     }
 
     private void RespondToThrustInput()
