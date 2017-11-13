@@ -8,10 +8,11 @@ public class Rocket : MonoBehaviour
 {
 
     [SerializeField] float rcsThrust = 90f;
-    [SerializeField] float mainThrust = 15f;
+    [SerializeField] float mainThrust = 600f;
     [SerializeField] AudioClip mainEngine;
     [SerializeField] AudioClip death;
     [SerializeField] AudioClip success;
+    [SerializeField] float levelLoadDelay = 2f;
 
     [SerializeField] ParticleSystem mainEngineParticles;
     [SerializeField] ParticleSystem deathParticles;
@@ -100,7 +101,7 @@ public class Rocket : MonoBehaviour
 
     private void ApplyThrust()
     {
-        rigidBody.AddRelativeForce(Vector3.up * mainThrust);
+        rigidBody.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
         if (!audio.isPlaying) //so it doesnt layer
         {
             audio.PlayOneShot(mainEngine);
