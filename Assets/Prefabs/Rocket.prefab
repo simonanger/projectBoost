@@ -488,3 +488,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f07f60220a846b2a4f97c1d2b68dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rcsThrust: 90
+  mainThrust: 600
+  mainEngine: {fileID: 0}
+  death: {fileID: 0}
+  success: {fileID: 0}
+  levelLoadDelay: 2
+  mainEngineParticles: {fileID: 0}
+  deathParticles: {fileID: 0}
+  successParticles: {fileID: 0}

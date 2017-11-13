@@ -416,6 +416,7 @@ MonoBehaviour:
   mainEngine: {fileID: 8300000, guid: 65fb6323bc27e465e905db7d0dd749bb, type: 3}
   death: {fileID: 8300000, guid: a3a88929c36444bbfaba54c5ded4c7d5, type: 3}
   success: {fileID: 8300000, guid: 0d8fc97f887114b9c9be2b2be677ac7e, type: 3}
+  levelLoadDelay: 2
   mainEngineParticles: {fileID: 198796695906995588}
   deathParticles: {fileID: 198375510815879094}
   successParticles: {fileID: 198596640251954606}
