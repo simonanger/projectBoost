@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Rocket : MonoBehaviour 
 {
 
-    [SerializeField] float rcsThrust = 90f;
+    [SerializeField] float rcsThrust = 150f;
     [SerializeField] float mainThrust = 600f;
     [SerializeField] AudioClip mainEngine;
     [SerializeField] AudioClip death;
@@ -18,7 +19,10 @@ public class Rocket : MonoBehaviour
     [SerializeField] ParticleSystem deathParticles;
     [SerializeField] ParticleSystem successParticles;
 
+    [SerializeField] Text textBox;
+
     static int levelNumber = 0;
+    static int lives = 5;
 
     Rigidbody rigidBody;
     AudioSource audio;
@@ -30,6 +34,8 @@ public class Rocket : MonoBehaviour
 	void Start () {
         rigidBody = GetComponent<Rigidbody>();
         audio = GetComponent<AudioSource>();
+        textBox = GetComponent<Text>();
+        textBox.text = "Lives: " + lives.ToString();
 	}
 	
 	// Update is called once per frame
@@ -53,7 +59,6 @@ public class Rocket : MonoBehaviour
                 break;
             case "Finish":
                 levelNumber++;
-                print(levelNumber);
                 StartSuccessSequence();
                 break;
             default:
