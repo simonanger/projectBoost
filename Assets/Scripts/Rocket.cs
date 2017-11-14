@@ -62,7 +62,7 @@ public class Rocket : MonoBehaviour
                 StartSuccessSequence();
                 break;
             default:
-                levelNumber = 0;
+                lives--;
                 StartDeathSequence();
                 break;
         }
@@ -80,18 +80,29 @@ public class Rocket : MonoBehaviour
 
     private void StartDeathSequence()
     {
-        state = State.Dying;
-        audio.Stop();
-        audio.PlayOneShot(death);
-        deathParticles.Play();
-        Invoke("LoadFirstLevel", 1f);
-        //LoadFirstLevel();
+        if (lives > 0){
+            state = State.Dying;
+            audio.Stop();
+            audio.PlayOneShot(death);
+            deathParticles.Play();
+            Invoke("LoadNextLevel", 1f);
+        }
+        if (lives == 0)
+        {
+            state = State.Dying;
+            audio.Stop();
+            audio.PlayOneShot(death);
+            deathParticles.Play();
+            Invoke("LoadFirstLevel", 1f);
+            //LoadFirstLevel();
+        }
     }
 
     private void LoadFirstLevel()
     {
+        lives = 5;
+        levelNumber = 0;
         SceneManager.LoadScene(0);
-        print(levelNumber);
     }
 
     private void LoadNextLevel()
