@@ -266,6 +266,8 @@ Prefab:
 
         Thank you for playing Project Boost!
 
+        Press enter to start again.
+
 '
       objectReference: {fileID: 0}
     - target: {fileID: 224894009123910516, guid: 18b1488d6ba7545c1a3a2fee4dc417b9,

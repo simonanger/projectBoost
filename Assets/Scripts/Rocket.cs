@@ -40,9 +40,15 @@ public class Rocket : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.Return))
+        if (Input.GetKey(KeyCode.Return) && levelNumber < 6 )
         {
             levelNumber++;
+            LoadNextLevel();
+        }
+        if (Input.GetKey(KeyCode.Return) && levelNumber == 6)
+        {
+            levelNumber = 1;
+            lives = 5;
             LoadNextLevel();
         }
 
