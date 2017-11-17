@@ -32,6 +32,7 @@ public class Rocket : MonoBehaviour
 
 	// Use this for initialization
 	void Start () {
+        print(SceneManager.sceneCountInBuildSettings);
         rigidBody = GetComponent<Rigidbody>();
         audio = GetComponent<AudioSource>();
         textBox = GetComponent<Text>();
@@ -40,12 +41,12 @@ public class Rocket : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.Return) && levelNumber < 6 )
+        if (Input.GetKey(KeyCode.Return) && levelNumber < SceneManager.sceneCountInBuildSettings -1)
         {
             levelNumber++;
             LoadNextLevel();
         }
-        if (Input.GetKey(KeyCode.Return) && levelNumber == 6)
+        if (Input.GetKey(KeyCode.Return) && levelNumber == SceneManager.sceneCountInBuildSettings -1)
         {
             levelNumber = 1;
             lives = 5;
